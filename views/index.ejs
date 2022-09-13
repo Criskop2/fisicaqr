@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body id="body">
+  <div class="header">
+    <a class="logo">Inventario laboratorio física</a>
+    <div class="header-right">
+      <a class="active" href="#cat1">cat 1</a>
+      <a href="#cat2">cat 2</a>
+      <a href="#cat3">cat 3</a>
+    </div>
+  </div>
+  <center>
+    <h1>Add element</h1>
+    
+  <form action="/" method="POST">
+    <p>Name<input type="text" name="nameinput"></p>
+    <p>Categoryname<input type="text" name="categoryinput"></p>
+    <p>Description<input type="text" name="descinput"></p>
+    <p>img<input type="text" name="imginput"></p>
+    <button type="submit">Submit</button>
+      </form>
+</center>
+      <div id="box">
+        <%items.forEach(function(item){ %>
+          <form action="/delete" method="POST">
+         
+      
+<main class="card">
+<header> 
+  <input class="delete" type="checkbox" name="checkbox" value="<%=item._id%>" onchange="this.form.submit()">
+<img src="<%=item.img%>" alt="">
+</header>
+
+<section>
+<h2><%=item.name%>  </h2>
+<h3><%=item.category%></h3>
+<p><%=item.description%></p>
+</section>
+
+<footer>
+<p style="text-align: center;">Cod: <%=item.cod%> </p> 
+</footer>
+
+</main>
+
+  
+        </form>
+        
+
+        <% }) %>
+      </div>
+ 
+
+
+</body>
+</html>
